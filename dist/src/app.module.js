@@ -13,13 +13,15 @@ const app_service_1 = require("./app.service");
 const data_source_1 = require("../db/data-source");
 const typeorm_1 = require("@nestjs/typeorm");
 const student_module_1 = require("./student/student.module");
+const local_module_1 = require("./local/local.module");
 let AppModule = exports.AppModule = class AppModule {
 };
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forRoot(data_source_1.dataSourceOptions),
-            student_module_1.StudentModule
+            student_module_1.StudentModule,
+            local_module_1.LocalModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
