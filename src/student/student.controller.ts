@@ -11,11 +11,12 @@ import { StudentEntity } from "./student.entity";
         return this.studentService.findAll();
     }
 
+    ///*
     @Get(':id')
-    findById(@Param('id') id: string){
-        return this.studentService.findById(id);
+    async findById(@Param('id') id: string):Promise<StudentEntity>{
+        return await this.studentService.findById(id);
     }
-
+    //*/
     @Delete(':id')
     async remove(@Param('id') id:string){
         return await this.studentService.remove(id);
@@ -30,5 +31,18 @@ import { StudentEntity } from "./student.entity";
     update(@Param('id') id:string, @Body() dto: StudentDto){
         return this.studentService.update({...dto, id});
     }
-
+    /*
+    @Get('dashQttByCourse')
+    async dashQttByCourse(){
+        return this.studentService.dashQttByCourse();
+    }
+    @Get('dashQttByPhase')
+    async dashQttByPhase(){
+        return this.studentService.dashQttByPhase();
+    }
+    @Get('dashQttByGender')
+    async dashQttByGender(){
+        return this.studentService.dashQttByGender();
+    }
+    */
 }
