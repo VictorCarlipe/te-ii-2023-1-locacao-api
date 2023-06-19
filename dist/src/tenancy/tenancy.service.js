@@ -62,10 +62,10 @@ let TenancyService = exports.TenancyService = class TenancyService {
     validInitialDate(initialDate) {
         const inital = new Date(initialDate);
         const now = new Date(Date.now());
-        if (inital.getTime() < (now.getTime() - 1 * this.day)) {
-            return { invalidIntialDate: 'invaliDate' };
+        if (inital.getTime() > (now.getTime())) {
+            return true;
         }
-        return null;
+        return false;
     }
     validFinalDate(finalDate, initialDate) {
         const inDate = new Date(initialDate);

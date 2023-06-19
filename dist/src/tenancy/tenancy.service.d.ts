@@ -22,8 +22,6 @@ export declare class TenancyService {
     create(dto: TenancyDto): Promise<TenancyEntity>;
     update(dto: TenancyDto): Promise<TenancyDto & TenancyEntity>;
     validate(dto: TenancyDto): void;
-    validInitialDate(initialDate: Date): {
-        invalidIntialDate: string;
-    };
+    validInitialDate(initialDate: Date): boolean;
     validFinalDate(finalDate: Date, initialDate: Date): boolean;
 }
