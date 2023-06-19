@@ -14,6 +14,7 @@ const data_source_1 = require("../db/data-source");
 const typeorm_1 = require("@nestjs/typeorm");
 const student_module_1 = require("./student/student.module");
 const local_module_1 = require("./local/local.module");
+const tenancy_module_1 = require("./tenancy/tenancy.module");
 let AppModule = exports.AppModule = class AppModule {
 };
 exports.AppModule = AppModule = __decorate([
@@ -21,7 +22,8 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot(data_source_1.dataSourceOptions),
             student_module_1.StudentModule,
-            local_module_1.LocalModule
+            local_module_1.LocalModule,
+            tenancy_module_1.TenancyModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

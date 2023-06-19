@@ -1,12 +1,14 @@
 import{
     Column,
     Entity,
+    OneToMany,
     PrimaryGeneratedColumn
 } from 'typeorm'
 
 import { CourseEnum } from "./course.enum";
 import { PhaseEnum } from "./phase.enum";
 import { GenderEnum } from './gender.enum';
+import { TenancyEntity } from 'src/tenancy/tenancy.entity';
 
 @Entity({ name: 'students' })
 export class StudentEntity {
@@ -36,4 +38,7 @@ export class StudentEntity {
 
     @Column ({type:'enum', enum:GenderEnum, default:GenderEnum.Indefinido, nullable:true})
     gender: GenderEnum;
+
+    @OneToMany(() => TenancyEntity, (tenancy) => tenancy.student)
+    tenancys: TenancyEntity[];
 }

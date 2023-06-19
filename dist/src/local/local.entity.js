@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocalEntity = void 0;
 const typeorm_1 = require("typeorm");
 const unity_enum_1 = require("./unity.enum");
+const tenancy_entity_1 = require("../tenancy/tenancy.entity");
 let LocalEntity = exports.LocalEntity = class LocalEntity {
 };
 __decorate([
@@ -34,6 +35,10 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
 ], LocalEntity.prototype, "attributes", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => tenancy_entity_1.TenancyEntity, (tenancy) => tenancy.local),
+    __metadata("design:type", Array)
+], LocalEntity.prototype, "tenancys", void 0);
 exports.LocalEntity = LocalEntity = __decorate([
     (0, typeorm_1.Entity)({ name: 'locals' })
 ], LocalEntity);

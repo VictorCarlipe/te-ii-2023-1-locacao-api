@@ -12,6 +12,7 @@ export declare class LocalService {
         unity: import("./unity.enum").UnityEnum;
         lotation: number;
         attributes: string;
+        tenancys: import("../tenancy/tenancy.entity").TenancyEntity[];
     }>;
     create(dto: LocalDto): Promise<LocalEntity>;
     update(dto: LocalDto): Promise<LocalDto & LocalEntity>;

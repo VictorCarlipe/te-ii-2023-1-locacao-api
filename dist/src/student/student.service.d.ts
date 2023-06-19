@@ -16,6 +16,7 @@ export declare class StudentService {
         course: import("./course.enum").CourseEnum;
         phase: import("./phase.enum").PhaseEnum;
         gender: import("./gender.enum").GenderEnum;
+        tenancys: import("../tenancy/tenancy.entity").TenancyEntity[];
     }>;
     create(dto: StudentDto): Promise<StudentEntity>;
     update(dto: StudentDto): Promise<StudentDto & StudentEntity>;

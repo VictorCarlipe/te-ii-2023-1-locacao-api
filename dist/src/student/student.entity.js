@@ -14,6 +14,7 @@ const typeorm_1 = require("typeorm");
 const course_enum_1 = require("./course.enum");
 const phase_enum_1 = require("./phase.enum");
 const gender_enum_1 = require("./gender.enum");
+const tenancy_entity_1 = require("../tenancy/tenancy.entity");
 let StudentEntity = exports.StudentEntity = class StudentEntity {
 };
 __decorate([
@@ -52,6 +53,10 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'enum', enum: gender_enum_1.GenderEnum, default: gender_enum_1.GenderEnum.Indefinido, nullable: true }),
     __metadata("design:type", String)
 ], StudentEntity.prototype, "gender", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => tenancy_entity_1.TenancyEntity, (tenancy) => tenancy.student),
+    __metadata("design:type", Array)
+], StudentEntity.prototype, "tenancys", void 0);
 exports.StudentEntity = StudentEntity = __decorate([
     (0, typeorm_1.Entity)({ name: 'students' })
 ], StudentEntity);

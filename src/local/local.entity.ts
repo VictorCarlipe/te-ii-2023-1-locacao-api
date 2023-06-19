@@ -1,9 +1,11 @@
 import{
     Column,
     Entity,
+    OneToMany,
     PrimaryGeneratedColumn
 } from 'typeorm'
 import { UnityEnum } from './unity.enum';
+import { TenancyEntity } from 'src/tenancy/tenancy.entity';
 
 @Entity({ name: 'locals' })
 export class LocalEntity{
@@ -21,4 +23,7 @@ export class LocalEntity{
 
     @Column({type:'varchar', nullable:false})
     attributes: string;
+
+    @OneToMany(() => TenancyEntity, (tenancy) => tenancy.local)
+    tenancys: TenancyEntity[];
 }

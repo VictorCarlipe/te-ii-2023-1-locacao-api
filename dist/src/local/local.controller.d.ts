@@ -12,6 +12,7 @@ export declare class LocalContoller {
         unity: import("./unity.enum").UnityEnum;
         lotation: number;
         attributes: string;
+        tenancys: import("../tenancy/tenancy.entity").TenancyEntity[];
     }>;
     create(dto: LocalDto): Promise<LocalEntity>;
     update(id: string, dto: LocalDto): Promise<LocalDto & LocalEntity>;
