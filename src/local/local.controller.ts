@@ -10,12 +10,12 @@ import { LocalDto } from "./local.dto";
     findAll():Promise<LocalEntity[]>{
         return this.localService.findAll();
     }
-    ///*
+
     @Get(':id')
     async findById(@Param('id') id:string):Promise<LocalEntity>{
         return await this.localService.findById(id);
     }
-    //*/
+
     @Delete(':id')
     async remove(@Param('id') id:string){
         return await this.localService.remove(id);
@@ -31,10 +31,9 @@ import { LocalDto } from "./local.dto";
         return this.localService.update({...dto, id})
     }
 
-    /*
+
     @Get('dashQttUnity')
     async dashQttUnity(){
         return this.localService.dashQttUnity();
     }
-    */
 }

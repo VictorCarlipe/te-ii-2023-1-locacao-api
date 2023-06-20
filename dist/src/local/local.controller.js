@@ -35,6 +35,9 @@ let LocalContoller = exports.LocalContoller = class LocalContoller {
     update(id, dto) {
         return this.localService.update(Object.assign(Object.assign({}, dto), { id }));
     }
+    async dashQttUnity() {
+        return this.localService.dashQttUnity();
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -71,6 +74,12 @@ __decorate([
     __metadata("design:paramtypes", [String, local_dto_1.LocalDto]),
     __metadata("design:returntype", void 0)
 ], LocalContoller.prototype, "update", null);
+__decorate([
+    (0, common_1.Get)('dashQttUnity'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], LocalContoller.prototype, "dashQttUnity", null);
 exports.LocalContoller = LocalContoller = __decorate([
     (0, common_1.Controller)('locals'),
     __metadata("design:paramtypes", [local_service_1.LocalService])

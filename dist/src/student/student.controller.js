@@ -20,6 +20,15 @@ let StudentController = exports.StudentController = class StudentController {
     constructor(studentService) {
         this.studentService = studentService;
     }
+    async dashQttByCourse() {
+        return this.studentService.dashQttByCourse();
+    }
+    async dashQttByPhase() {
+        return this.studentService.dashQttByPhase();
+    }
+    async dashQttByGender() {
+        return this.studentService.dashQttByGender();
+    }
     findAll() {
         return this.studentService.findAll();
     }
@@ -37,13 +46,31 @@ let StudentController = exports.StudentController = class StudentController {
     }
 };
 __decorate([
+    (0, common_1.Get)('/dashQttByCourse'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "dashQttByCourse", null);
+__decorate([
+    (0, common_1.Get)('/dashQttByPhase'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "dashQttByPhase", null);
+__decorate([
+    (0, common_1.Get)('/dashQttByGender'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "dashQttByGender", null);
+__decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], StudentController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':id'),
+    (0, common_1.Get)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),

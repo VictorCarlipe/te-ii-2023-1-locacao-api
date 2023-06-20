@@ -16,4 +16,5 @@ export declare class LocalContoller {
     }>;
     create(dto: LocalDto): Promise<LocalEntity>;
     update(id: string, dto: LocalDto): Promise<LocalDto & LocalEntity>;
+    dashQttUnity(): Promise<any[]>;
 }

@@ -4,6 +4,9 @@ import { StudentEntity } from "./student.entity";
 export declare class StudentController {
     private studentService;
     constructor(studentService: StudentService);
+    dashQttByCourse(): Promise<any[]>;
+    dashQttByPhase(): Promise<any[]>;
+    dashQttByGender(): Promise<any[]>;
     findAll(): Promise<StudentEntity[]>;
     findById(id: string): Promise<StudentEntity>;
     remove(id: string): Promise<{

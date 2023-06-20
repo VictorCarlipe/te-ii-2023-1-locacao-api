@@ -11,13 +11,11 @@ import { TenancyDto } from "./tenancy.dto";
         return this.tenancyService.findAll();
     }
 
-    ///*
     @Get(':id')
     async findById(@Param('id') id: string):Promise<TenancyEntity>{
         return await this.tenancyService.findById(id);
     }
-    //*/
-    
+ 
     @Delete(':id')
     async remove(@Param('id') id:string){
         return await this.tenancyService.remove(id);
