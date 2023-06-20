@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "5c6f9505-388f-420c-be18-d5e100d4287d",
+		"name": "TE-II-2023-1-locacao-api (tenancys)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26177662"
+	},
+	"item": [
+		{
+			"name": "findAll() - Tenancys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/tenancys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findById() - Tenancys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tenancys/ae415cd5-396a-4aab-9aa1-8dd9c6683ddc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys",
+						"ae415cd5-396a-4aab-9aa1-8dd9c6683ddc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove() - Tenancys",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tenancys/920051b9-fd58-45f3-8367-860e4f2241e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys",
+						"920051b9-fd58-45f3-8367-860e4f2241e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create() - Tenancys",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"ae415cd5-396a-4aab-9aa1-8dd9c6683ddc\",\r\n    \"initialDate\": \"2023-06-19\",\r\n    \"finalDate\": \"2023-08-30\",\r\n    \"objective\": \"ATE\",\r\n    \"description\": null,\r\n    \"local\": {\r\n        \"id\": \"d4aa6c74-8d15-46ac-9d0e-388647fbd01a\",\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 42,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    },\r\n    \"student\": {\r\n        \"id\": \"3d115a21-858d-486a-90a9-62295e586c43\",\r\n        \"registration\": 738750923,\r\n        \"name\": \"Pedro da Silva\",\r\n        \"datebirth\": \"2002-01-01\",\r\n        \"email\": \"pedro.silva@outlook.com\",\r\n        \"phone\": \"48991919191\",\r\n        \"course\": \"adm\",\r\n        \"phase\": \"1\",\r\n        \"gender\": \"M\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tenancys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update(objective) - Tenancys",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"initialDate\": \"2023-06-19\",\r\n    \"finalDate\": \"2023-08-30\",\r\n    \"objective\": \"JOG\",\r\n    \"description\": null,\r\n    \"local\": {\r\n        \"id\": \"d4aa6c74-8d15-46ac-9d0e-388647fbd01a\",\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 42,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    },\r\n    \"student\": {\r\n        \"id\": \"3d115a21-858d-486a-90a9-62295e586c43\",\r\n        \"registration\": 738750923,\r\n        \"name\": \"Pedro da Silva\",\r\n        \"datebirth\": \"2002-01-01\",\r\n        \"email\": \"pedro.silva@outlook.com\",\r\n        \"phone\": \"48991919191\",\r\n        \"course\": \"adm\",\r\n        \"phase\": \"1\",\r\n        \"gender\": \"M\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tenancys/ae415cd5-396a-4aab-9aa1-8dd9c6683ddc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys",
+						"ae415cd5-396a-4aab-9aa1-8dd9c6683ddc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 01 - InvalidInitialDate() on POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"ae415cd5-396a-4aab-9aa1-8dd9c6683ddc\",\r\n    \"initialDate\": \"2023-06-30\",\r\n    \"finalDate\": \"2023-08-30\",\r\n    \"objective\": \"ATE\",\r\n    \"description\": null,\r\n    \"local\": {\r\n        \"id\": \"d4aa6c74-8d15-46ac-9d0e-388647fbd01a\",\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 42,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    },\r\n    \"student\": {\r\n        \"id\": \"3d115a21-858d-486a-90a9-62295e586c43\",\r\n        \"registration\": 738750923,\r\n        \"name\": \"Pedro da Silva\",\r\n        \"datebirth\": \"2002-01-01\",\r\n        \"email\": \"pedro.silva@outlook.com\",\r\n        \"phone\": \"48991919191\",\r\n        \"course\": \"adm\",\r\n        \"phase\": \"1\",\r\n        \"gender\": \"M\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tenancys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 01 - InvalidInitialDate on PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"initialDate\": \"2023-08-15\",\r\n    \"finalDate\": \"2023-08-30\",\r\n    \"objective\": \"JOG\",\r\n    \"description\": null,\r\n    \"local\": {\r\n        \"id\": \"d4aa6c74-8d15-46ac-9d0e-388647fbd01a\",\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 42,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    },\r\n    \"student\": {\r\n        \"id\": \"3d115a21-858d-486a-90a9-62295e586c43\",\r\n        \"registration\": 738750923,\r\n        \"name\": \"Pedro da Silva\",\r\n        \"datebirth\": \"2002-01-01\",\r\n        \"email\": \"pedro.silva@outlook.com\",\r\n        \"phone\": \"48991919191\",\r\n        \"course\": \"adm\",\r\n        \"phase\": \"1\",\r\n        \"gender\": \"M\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tenancys/ae415cd5-396a-4aab-9aa1-8dd9c6683ddc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys",
+						"ae415cd5-396a-4aab-9aa1-8dd9c6683ddc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 02 - InvalidFinalDate() on POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"ae415cd5-396a-4aab-9aa1-8dd9c6683ddc\",\r\n    \"initialDate\": \"2023-06-15\",\r\n    \"finalDate\": \"2023-05-30\",\r\n    \"objective\": \"ATE\",\r\n    \"description\": null,\r\n    \"local\": {\r\n        \"id\": \"d4aa6c74-8d15-46ac-9d0e-388647fbd01a\",\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 42,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    },\r\n    \"student\": {\r\n        \"id\": \"3d115a21-858d-486a-90a9-62295e586c43\",\r\n        \"registration\": 738750923,\r\n        \"name\": \"Pedro da Silva\",\r\n        \"datebirth\": \"2002-01-01\",\r\n        \"email\": \"pedro.silva@outlook.com\",\r\n        \"phone\": \"48991919191\",\r\n        \"course\": \"adm\",\r\n        \"phase\": \"1\",\r\n        \"gender\": \"M\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tenancys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 02 - InvalidFinalDate on PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"initialDate\": \"2023-06-15\",\r\n    \"finalDate\": \"2023-05-30\",\r\n    \"objective\": \"JOG\",\r\n    \"description\": null,\r\n    \"local\": {\r\n        \"id\": \"d4aa6c74-8d15-46ac-9d0e-388647fbd01a\",\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 42,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    },\r\n    \"student\": {\r\n        \"id\": \"3d115a21-858d-486a-90a9-62295e586c43\",\r\n        \"registration\": 738750923,\r\n        \"name\": \"Pedro da Silva\",\r\n        \"datebirth\": \"2002-01-01\",\r\n        \"email\": \"pedro.silva@outlook.com\",\r\n        \"phone\": \"48991919191\",\r\n        \"course\": \"adm\",\r\n        \"phase\": \"1\",\r\n        \"gender\": \"M\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tenancys/ae415cd5-396a-4aab-9aa1-8dd9c6683ddc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tenancys",
+						"ae415cd5-396a-4aab-9aa1-8dd9c6683ddc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

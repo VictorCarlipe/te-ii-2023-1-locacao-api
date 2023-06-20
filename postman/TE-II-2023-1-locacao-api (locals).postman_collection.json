@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "b1c602ff-4a12-40e3-b432-3d22a8a205cc",
+		"name": "TE-II-2023-1-locacao-api (locals)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26177662"
+	},
+	"item": [
+		{
+			"name": "findAll() - Locals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/locals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllById() - Locals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/locals/d4aa6c74-8d15-46ac-9d0e-388647fbd01a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals",
+						"d4aa6c74-8d15-46ac-9d0e-388647fbd01a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove() - Locals",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/locals/4929ca56-49fb-483f-9170-32de06064601",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals",
+						"4929ca56-49fb-483f-9170-32de06064601"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create() - Locals",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Sala 121b\",\r\n        \"unity\": \"II\",\r\n        \"lotation\": 25,\r\n        \"attributes\": \"OP-MP-QB\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update(lotation, attributes) - Locals",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 42,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals/d4aa6c74-8d15-46ac-9d0e-388647fbd01a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals",
+						"d4aa6c74-8d15-46ac-9d0e-388647fbd01a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 01 - MinLotation on POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Sala 121b\",\r\n        \"unity\": \"II\",\r\n        \"lotation\": 5,\r\n        \"attributes\": \"OP-MP-QB\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 01 - MinLotation(10) on PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 2,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals/d4aa6c74-8d15-46ac-9d0e-388647fbd01a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals",
+						"d4aa6c74-8d15-46ac-9d0e-388647fbd01a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 02 - ConfictAttributes('QB-LT') on POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Sala 121b\",\r\n        \"unity\": \"II\",\r\n        \"lotation\": 28,\r\n        \"attributes\": \"OP-MP-QB-LT\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 02 - ConflictAttributes('QB-LT') on PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Laboratório 05\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 30,\r\n        \"attributes\": \"OP-MP-LT-QB\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals/d4aa6c74-8d15-46ac-9d0e-388647fbd01a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals",
+						"d4aa6c74-8d15-46ac-9d0e-388647fbd01a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 03 - MinLength(5) on POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Sala\",\r\n        \"unity\": \"II\",\r\n        \"lotation\": 28,\r\n        \"attributes\": \"OP-MP-QB\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regra Negocio 03 - MinLength(5) on PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Lab\",\r\n        \"unity\": \"IV\",\r\n        \"lotation\": 30,\r\n        \"attributes\": \"OP-MP-LT\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals/d4aa6c74-8d15-46ac-9d0e-388647fbd01a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals",
+						"d4aa6c74-8d15-46ac-9d0e-388647fbd01a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DashQttUnity - ReadMe(Body)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Não consegui achar um jeito de sobrescrever o metodo principal FindById que tbm usa o GET e exige um parâmetro UUID, devo ter colocado uma observação no readMe do projeto para você realizar comentarios nas linhas do local.controller.ts para que essas consultas de dashboard que retorna valores totais, pudessem funcionar..\r\n\r\nGracias!"
+				},
+				"url": {
+					"raw": "http://localhost:3000/locals/dashQttUnity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locals",
+						"dashQttUnity"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
