@@ -5,6 +5,8 @@ export declare class TenancysController {
     private tenancyService;
     constructor(tenancyService: TenancyService);
     findAll(): Promise<TenancyEntity[]>;
+    findByStudentId(id: string): Promise<TenancyEntity[]>;
+    findByLocalId(id: string): Promise<TenancyEntity[]>;
     findById(id: string): Promise<TenancyEntity>;
     remove(id: string): Promise<{
         id: string;

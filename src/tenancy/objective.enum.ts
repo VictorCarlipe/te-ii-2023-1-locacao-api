@@ -1,6 +1,9 @@
 export enum ObjectiveEnum {
     Monitoria = 'MON',
+    Atendimento = 'ATE',
     Eventos = 'EVE',
+    GrupoEnsino = 'ENS',
+    Treinos = 'TRE',
     Jogos = 'JOG',
-    Atendimento = 'ATE'
+    Outro = 'OUT'
 }

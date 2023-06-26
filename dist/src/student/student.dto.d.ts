@@ -7,7 +7,7 @@ export declare class StudentDto {
     name: string;
     datebirth?: Date | string;
     email?: string;
-    phone?: string;
+    phone?: number;
     course?: CourseEnum;
     phase?: PhaseEnum;
     gender?: GenderEnum;

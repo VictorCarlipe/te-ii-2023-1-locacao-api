@@ -11,6 +11,16 @@ import { TenancyDto } from "./tenancy.dto";
         return this.tenancyService.findAll();
     }
 
+    @Get('/GetByStudent/:id')
+    async findByStudentId(@Param('id') id: string):Promise<TenancyEntity[]>{
+        return await this.tenancyService.findByStudentId(id);
+    }
+
+    @Get('/GetByLocal/:id')
+    async findByLocalId(@Param('id') id: string):Promise<TenancyEntity[]>{
+        return await this.tenancyService.findByLocalId(id);
+    }
+
     @Get(':id')
     async findById(@Param('id') id: string):Promise<TenancyEntity>{
         return await this.tenancyService.findById(id);

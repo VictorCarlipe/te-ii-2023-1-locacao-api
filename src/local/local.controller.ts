@@ -5,10 +5,15 @@ import { LocalDto } from "./local.dto";
 
 @Controller('locals') export class LocalContoller{
     constructor(private localService: LocalService){}
-
+    
     @Get()
     findAll():Promise<LocalEntity[]>{
         return this.localService.findAll();
+    }
+    
+    @Get('/dashQttUnity')
+    async dashQttUnity(){
+        return this.localService.dashQttUnity();
     }
 
     @Get(':id')
@@ -32,8 +37,4 @@ import { LocalDto } from "./local.dto";
     }
 
 
-    @Get('dashQttUnity')
-    async dashQttUnity(){
-        return this.localService.dashQttUnity();
-    }
 }

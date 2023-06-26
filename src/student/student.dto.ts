@@ -34,9 +34,9 @@ export class StudentDto{
     @IsOptional()
     email?: string;
 
-    @IsString()
+    @IsInt()
     @IsOptional()
-    phone?: string;
+    phone?: number;
 
     @IsEnum(CourseEnum)
     @IsOptional()

@@ -8,7 +8,7 @@ export declare class StudentEntity {
     name: string;
     datebirth: Date;
     email: string;
-    phone: string;
+    phone: number;
     course: CourseEnum;
     phase: PhaseEnum;
     gender: GenderEnum;

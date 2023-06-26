@@ -39,7 +39,7 @@ __decorate([
 ], StudentEntity.prototype, "email", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: 'varchar', nullable: true }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], StudentEntity.prototype, "phone", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: 'enum', enum: course_enum_1.CourseEnum, default: course_enum_1.CourseEnum.Administração, nullable: true }),

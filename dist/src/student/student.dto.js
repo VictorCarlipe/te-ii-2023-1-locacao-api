@@ -43,9 +43,9 @@ __decorate([
     __metadata("design:type", String)
 ], StudentDto.prototype, "email", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsInt)(),
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], StudentDto.prototype, "phone", void 0);
 __decorate([
     (0, class_validator_1.IsEnum)(course_enum_1.CourseEnum),

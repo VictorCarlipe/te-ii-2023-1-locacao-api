@@ -15,7 +15,7 @@ export declare class StudentController {
         name: string;
         datebirth: Date;
         email: string;
-        phone: string;
+        phone: number;
         course: import("./course.enum").CourseEnum;
         phase: import("./phase.enum").PhaseEnum;
         gender: import("./gender.enum").GenderEnum;

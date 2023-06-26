@@ -35,6 +35,20 @@ let TenancyService = exports.TenancyService = class TenancyService {
         }
         return findOne;
     }
+    async findByStudentId(id) {
+        const findStudent = await this.tenancyRepository.find({ where: { student: { id } } });
+        if (findStudent == null) {
+            throw new common_1.NotFoundException(`Não foi encontrado nenhum registro no qual o identificador do aluno(a) é ${id}`);
+        }
+        return findStudent;
+    }
+    async findByLocalId(id) {
+        const findLocal = await this.tenancyRepository.find({ where: { local: { id } } });
+        if (findLocal == null) {
+            throw new common_1.NotFoundException(`Não foi encontrado nenhum registro no qual o identificador do local é ${id}`);
+        }
+        return findLocal;
+    }
     async remove(id) {
         const findById = await this.findById(id);
         await this.tenancyRepository.remove(findById);

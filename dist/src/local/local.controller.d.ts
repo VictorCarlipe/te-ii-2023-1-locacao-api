@@ -5,6 +5,7 @@ export declare class LocalContoller {
     private localService;
     constructor(localService: LocalService);
     findAll(): Promise<LocalEntity[]>;
+    dashQttUnity(): Promise<any[]>;
     findById(id: string): Promise<LocalEntity>;
     remove(id: string): Promise<{
         id: string;
@@ -16,5 +17,4 @@ export declare class LocalContoller {
     }>;
     create(dto: LocalDto): Promise<LocalEntity>;
     update(id: string, dto: LocalDto): Promise<LocalDto & LocalEntity>;
-    dashQttUnity(): Promise<any[]>;
 }

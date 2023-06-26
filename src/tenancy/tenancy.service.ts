@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { TenancyEntity } from "./tenancy.entity";
 import { Repository } from "typeorm";
 import { TenancyDto } from "./tenancy.dto";
+import { StudentEntity } from "src/student/student.entity";
 
 @Injectable()
 export class TenancyService{
@@ -29,6 +30,26 @@ export class TenancyService{
         }
         return findOne;
     }
+
+    async findByStudentId(id:string): Promise<TenancyEntity[]>{
+        const findStudent = await this.tenancyRepository.find({ where: {student: {id}} });
+        if(findStudent == null){
+            throw new NotFoundException(
+                `Não foi encontrado nenhum registro no qual o identificador do aluno(a) é ${id}`,
+              );
+        }
+        return findStudent;
+    }    
+
+    async findByLocalId(id:string): Promise<TenancyEntity[]>{
+        const findLocal = await this.tenancyRepository.find({ where: {local: {id}} });
+        if(findLocal == null){
+            throw new NotFoundException(
+                `Não foi encontrado nenhum registro no qual o identificador do local é ${id}`,
+              );
+        }
+        return findLocal;
+    }      
 
     async remove(id:string){
         const findById = await this.findById(id);
