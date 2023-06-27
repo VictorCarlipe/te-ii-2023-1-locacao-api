@@ -27,7 +27,7 @@ export class StudentEntity {
     @Column({type:'varchar', nullable:true})
     email:string;
 
-    @Column({type:'varchar', nullable:true})
+    @Column({type:'bigint', nullable:true})
     phone:number;
 
     @Column({type:'enum', enum:CourseEnum, default:CourseEnum.Administração, nullable:true})
